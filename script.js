@@ -54,8 +54,10 @@ scene.add(light);
 scene.background = skyboss
 // positioning
 cube.mesh.position.x=-3
+cube2.mesh.position.z = cube.mesh.position.z = -6
 cube2.mesh.position.x=3
 floor.mesh.position.y=-3
+floor.mesh.position.z=-6
 
 
 
