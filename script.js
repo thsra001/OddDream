@@ -33,9 +33,15 @@ const cube2 = {
   // The geometry: the shape & size of the object
   geometry: new THREE.BoxGeometry(0.2, 6, 18),
   // The material: the appearance (color, texture) of the object
-  material: new THREE.MeshBasicMaterial ({ color:0x183F9F})
-};
+  material: new THREE.MeshBasicMaterial ({ color:0x183F9F})};
+const ceiling = {
+  // The geometry: the shape & size of the object
+  geometry: new THREE.BoxGeometry(6, 0.2, 18),
+  // The material: the appearance (color, texture) of the object
+  material: new THREE.MeshBasicMaterial ({ 
+  color: 0x183f9f})};
 const cube = {};
+
 const floor = {
   // The geometry: the shape & size of the object
   geometry: new THREE.BoxGeometry(6, 0.2, 18),
@@ -46,10 +52,12 @@ const floor = {
 cube.mesh = new THREE.Mesh(cube2.geometry, cube2.material);
 cube2.mesh = new THREE.Mesh(cube2.geometry, cube2.material);
 floor.mesh = new THREE.Mesh(floor.geometry, floor.material);
+ceiling.mesh = new THREE.Mesh(ceiling.geometry, ceiling.material);
 // Add the cube into the scene
 scene.add(cube.mesh);
 scene.add(floor.mesh)
 scene.add(cube2.mesh);
+scene.add(ceiling.mesh)
 scene.add(light);
 scene.background = skyboss
 // positioning
@@ -57,7 +65,9 @@ cube.mesh.position.x=-3
 cube2.mesh.position.z = cube.mesh.position.z = -6
 cube2.mesh.position.x=3
 floor.mesh.position.y=-3
+ceiling.mesh.position.y=3
 floor.mesh.position.z=-6
+ceiling.mesh.position.z=-6
 
 
 
