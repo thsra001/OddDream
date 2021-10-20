@@ -3,7 +3,7 @@ const scene = new THREE.Scene();
 
 // The camera
 const camera = new THREE.PerspectiveCamera(
-  110,
+  70,
   window.innerWidth / window.innerHeight,
   1,
   10000
@@ -53,7 +53,14 @@ cube2.mesh.position.x=3
 floor.mesh.position.y=-3
 // Make the camera further from the cube so we can see it better
 camera.position.z = 5;
-
+// skybox
+const loader = new THREE.CubeTextureLoader();
+const skyboss = loader.load( [
+	'tex/box/px.png', 'tex/box/nx.png',
+	'tex/box/py.png', 'tex/box/ny.png',
+	'tex/box/pz.png', 'tex/box/nz.png'
+] );
+  scene.background = skyboss
 function render() {
   // Render the scene and the camera
   renderer.render(scene, camera);
